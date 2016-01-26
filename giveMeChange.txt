@@ -1,0 +1,5 @@
+Create a function that takes a dollar figure and returns the smallest number of coins we could use to recreate the exact amount. Use only pennies, nickels, dimes, and quarters.
+
+giveMeChange('$3.75') should return 15
+giveMeChange('$1.37') should return 8
+giveMeChange('$7.18') should return 33
