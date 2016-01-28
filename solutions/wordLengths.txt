@@ -1,0 +1,13 @@
+function wordLengths(sentence) {
+	var lengths = [];
+	var wordsArray = sentence.split(" ");
+
+	for(var i = 0; i < wordsArray.length; i++) {
+		var cleanedWord = wordsArray[i].replace(/\W/g, '');
+		lengths.push(wordsArray[i].length);
+	}
+
+	return lengths;
+}
+
+wordLengths("It's my party and I'll cry if I want to");

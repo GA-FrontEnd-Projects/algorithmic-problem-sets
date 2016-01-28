@@ -1,0 +1,28 @@
+function giveMeChange(amount) {
+	var totalCents = parseFloat(amount.substr(1))*100;
+	var dollars = Math.floor(totalCents/100);
+	var cents = totalCents % 100;
+
+    var coins = {
+        quarters: dollars*4,
+	    dimes: 0,
+	    nickels: 0,
+	    pennies: 0
+    };
+    
+    var remainingCents = cents;
+    
+	var coinAmounts = {'quarters': 25, 'dimes': 10, 'nickels': 5, 'pennies': 1};
+
+	for (var coin in coinAmounts) {
+		if(remainingCents/coinAmounts[coin] > 0) {
+		    var numThisCoin = Math.floor(cents/coinAmounts[coin]);
+			coins[coin] += numThisCoin;
+			remainingCents -= numThisCoin * coinAmounts[coin];
+		}
+	}
+
+	return coins.quarters + coins.dimes + coins.nickels + coins.pennies;
+}
+
+giveMeChange('$3.75');
