@@ -16,7 +16,7 @@ function giveMeChange(amount) {
 
 	for (var coin in coinAmounts) {
 		if(remainingCents/coinAmounts[coin] > 0) {
-		    var numThisCoin = Math.floor(cents/coinAmounts[coin]);
+		    var numThisCoin = Math.floor(remainingCents/coinAmounts[coin]);
 			coins[coin] += numThisCoin;
 			remainingCents -= numThisCoin * coinAmounts[coin];
 		}
